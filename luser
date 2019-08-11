@@ -1,0 +1,63 @@
+#!/bin/sh
+
+. /etc/efingerd/log
+
+echo
+if [ "$1" = "(null)" ]; then
+  echo hello "$2",
+else
+  echo hello "$1@$2",
+fi
+echo
+
+if [ "$3" = "root" ]; then
+
+  echo "you've reached"
+  figlet -f smslant envs.net
+
+  cat <<EOM
+envs.net is a minimalist, non-commercial
+shared unix system and will always be free to use.
+
+we are linux lovers, programmer and users who like build webpages,
+write blogs, chat online, play cool console games and so much more.
+
+you wish to join with an small user space?
+
+https://envs.net/
+https://envs.net/signup/
+EOM
+
+else
+  user_folder="/home/${3}"
+  # /usr/bin/finger -m "$3"
+
+  # Project
+  printf "Project:\\n"
+  if [ -f "${user_folder}/.project" ]; then
+    sed 's/^/  /' "${user_folder}/.project"
+  else
+    printf "No Project.\\n"
+  fi
+
+  # Plan
+  printf "Plan:\\n"
+  if [ -f "${user_folder}/.plan" ]; then
+    sed 's/^/  /' "${user_folder}/.plan"
+  else
+    printf "No Plan.\\n"
+  fi
+
+  # Timezone
+  if [ -f "${user_folder}/.tz" ]; then
+    echo -n "Timezone: "
+    cat "${user_folder}/.tz"
+    echo
+  fi
+
+  # Online status
+  if finger "$3" | grep -q 'On since'; then
+    printf "Online.\\n"
+  fi
+
+fi
