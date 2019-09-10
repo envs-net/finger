@@ -2,31 +2,31 @@
 
 #. /etc/efingerd/log
 
-echo
 if [ "$1" = "(null)" ]; then
-  echo hello "$2",
+  printf "hello %s,\n" "$2"
 else
-  echo hello "$1@$2",
+  printf "hello %s@%s\n" "$1" "$2"
 fi
 
+
 if [ "$3" = "time" ]; then
-  echo The time is...
+  printf 'The time is...\n'
   date
   exit 0
 fi
 
 if [ "$3" = "envs" ]; then
-  echo envs 4 a live
+  printf "envs 4 a live\n"
   exit 0
 fi
 
 if [ "$3" = "tilde" ]; then
-  echo a tilde 4 u a tilde 4 me
+  printf "a tilde 4 u a tilde 4 me\n"
   exit 0
 fi
 
 if [ "$3" = "ping" ]; then
-  echo "PONG!"
+  printf "PONG!\n"
   ping -c 5 "$2"
   exit 0
 fi
@@ -47,21 +47,21 @@ if [ "$3" = "uname" ]; then
 fi
 
 if [ "$3" = "new" ]; then
-  echo visit https://envs.net/signup/ to request an account
+  printf "visit https://envs.net/signup/ to request an account\n"
   exit 0
 fi
 
 if [ "$3" = "signup" ]; then
-  echo https://envs.net/signup/
+  printf "https://envs.net/signup/\n"
   exit 0
 fi
 
 if [ "$3" = "gopher" ]; then
-  echo try port 70
+  printf "try port 70\n"
   exit 0
 fi
 
-echo "you've reached"
+printf "you've reached\n"
 figlet -f smslant envs.net
 
 cat <<EOM

@@ -2,13 +2,11 @@
 
 . /etc/efingerd/log
 
-echo
 if [ "$1" = "(null)" ]; then
-  echo hello "$2",
+  printf "\nhello %s,\n\n" "$2"
 else
-  echo hello "$1@$2",
+  printf "\nhello %s@%s\n\n" "$1" "$2"
 fi
-echo
 
 if [ "$3" = "root" ]; then
 
@@ -50,9 +48,9 @@ else
 
   # Timezone
   if [ -f "${user_folder}/.tz" ]; then
-    echo -n "Timezone: "
+    printf "Timezone: "
     cat "${user_folder}/.tz"
-    echo
+    printf "\n"
   fi
 
   # Online status
