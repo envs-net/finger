@@ -9,8 +9,7 @@ else
 fi
 
 if [ "$3" = "root" ]; then
-
-  echo "you've reached"
+  printf "you've reached\n"
   figlet -f smslant envs.net
 
   cat <<EOM
