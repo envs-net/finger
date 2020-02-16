@@ -4,10 +4,19 @@
 
 printf "\nwelcome to\n"
 figlet -f smslant envs.net
-printf "is a minimalist, non-commercial\nshared linux system and will always be free to use.\n\n"
-printf "we are linux lovers, programmer and users who like build webpages,\n"
-printf "write blogs, chat online, play cool console games and so much more.\n"
-printf "visit us on the web or gopher for more info\n"
+
+cat <<EOM
+envs.net is a minimalist, non-commercial
+shared linux system and will always be free to use.
+
+we are linux lovers, programmer and users who like build webpages,
+write blogs, chat online, play cool console games and so much more.
+
+you wish to join with an small user space?
+
+https://envs.net/signup/
+https://envs.net/
+EOM
 
 if [ "$1" = "(null)" ]; then
   printf "hello %s,\n" "$2"
