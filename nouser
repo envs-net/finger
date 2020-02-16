@@ -25,6 +25,11 @@ if [ "$3" = "tilde" ]; then
   exit 0
 fi
 
+if [ "$3" = "linux" ]; then
+  printf "linux 4 a live <3\n"
+  exit 0
+fi
+
 if [ "$3" = "ping" ]; then
   printf "PONG!\n"
   ping -c 5 "$2"
