@@ -36,6 +36,11 @@ if [ "$3" = "ping" ]; then
   exit 0
 fi
 
+if [ "$3" = "pom" ] || [ "$3" = "moon" ]; then
+  /usr/games/pom
+  exit 0
+fi
+
 if [ "$3" = "fortune" ]; then
   /usr/games/fortune
   exit 0
