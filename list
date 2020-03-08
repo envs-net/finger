@@ -19,9 +19,9 @@ https://envs.net/
 EOM
 
 if [ "$1" = "(null)" ]; then
-  printf "hello %s,\n" "$2"
+  printf "\n\nhello %s,\n" "$2"
 else
-  printf "hello %s@%s\n" "$1" "$2"
+  printf "\n\nhello %s@%s\n" "$1" "$2"
 fi
 
 printf "users currently logged in are:\n\n"

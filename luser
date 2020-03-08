@@ -29,20 +29,28 @@ else
   user_folder="/home/${3}"
   # /usr/bin/finger -m "$3"
 
-  # Project
-  printf "Project:\\n"
-  if [ -f "${user_folder}/.project" ]; then
-    sed 's/^/  /' "${user_folder}/.project"
-  else
-    printf "No Project.\\n"
-  fi
-
   # Plan
   printf "Plan:\\n"
   if [ -f "${user_folder}/.plan" ]; then
     sed 's/^/  /' "${user_folder}/.plan"
   else
-    printf "No Plan.\\n"
+    printf "No Plan.\n"
+  fi
+
+  # Pronouns
+  printf "Pronouns:\\n"
+  if [ -f "${user_folder}/.pronouns" ]; then
+    sed 's/^/  /' "${user_folder}/.pronouns"
+  else
+    printf "No Pronouns.\n"
+  fi
+
+  # Project
+  printf "Project:\\n"
+  if [ -f "${user_folder}/.project" ]; then
+    sed 's/^/  /' "${user_folder}/.project"
+  else
+    printf "No Project.\n"
   fi
 
   # Timezone
@@ -54,7 +62,7 @@ else
 
   # Online status
   if finger "$3" | grep -q 'On since'; then
-    printf "Online.\\n"
+    printf "Online.\n"
   fi
 
 fi
