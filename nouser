@@ -52,7 +52,7 @@ if [ "$3" = "uptime" ]; then
 fi
 
 if [ "$3" = "uname" ]; then
-  /bin/uname --all
+  /bin/uname -a
   exit 0
 fi
 
@@ -67,7 +67,8 @@ if [ "$3" = "signup" ]; then
 fi
 
 if [ "$3" = "gopher" ]; then
-  printf "try port 70\n"
+  printf "try port 70 :)\n\n"
+  printf "gopher://envs.net\n"
   exit 0
 fi
 

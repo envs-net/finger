@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /etc/efingerd/log  # do some logging
+. /etc/efingerd/log
 
 printf "\nwelcome to\n"
 figlet -f smslant envs.net
@@ -24,6 +24,4 @@ else
   printf "\n\nhello %s@%s\n" "$1" "$2"
 fi
 
-printf "users currently logged in are:\n\n"
-who -uw | sort -u -k 1,1
-printf "\n"
+printf "users currently logged in are:\n\n%s\n" "$(who -uw | sort -u -k 1,1)"

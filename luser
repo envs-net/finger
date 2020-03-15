@@ -8,6 +8,7 @@ else
   printf "\nhello %s@%s\n\n" "$1" "$2"
 fi
 
+
 if [ "$3" = "root" ]; then
   printf "you've reached\n"
   figlet -f smslant envs.net
@@ -25,9 +26,15 @@ https://envs.net/
 https://envs.net/signup/
 EOM
 
+
+elif [ "$3" = "gopher" ]; then
+  printf "try port 70 :)\n\n"
+  printf "gopher://envs.net\n"
+
+
 else
   user_folder="/home/${3}"
-  # /usr/bin/finger -m "$3"
+  #/usr/bin/finger -m "$3"
 
   # Plan
   printf "Plan:\\n"
@@ -41,16 +48,12 @@ else
   printf "Pronouns:\\n"
   if [ -f "${user_folder}/.pronouns" ]; then
     sed 's/^/  /' "${user_folder}/.pronouns"
-  else
-    printf "No Pronouns.\n"
   fi
 
-  # Project
-  printf "Project:\\n"
+  # Projects
+  printf "Projects:\\n"
   if [ -f "${user_folder}/.project" ]; then
     sed 's/^/  /' "${user_folder}/.project"
-  else
-    printf "No Project.\n"
   fi
 
   # Timezone
@@ -66,3 +69,5 @@ else
   fi
 
 fi
+
+exit 0
