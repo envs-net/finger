@@ -3,9 +3,9 @@
 #. /etc/efingerd/log
 
 if [ "$1" = "(null)" ]; then
-  printf "hello %s,\n" "$2"
+  printf "hello %s,\n\n" "$2"
 else
-  printf "hello %s@%s\n" "$1" "$2"
+  printf "hello %s@%s\n\n" "$1" "$2"
 fi
 
 
