@@ -66,9 +66,20 @@ if [ "$3" = "signup" ]; then
   exit 0
 fi
 
+if [ "$3" = "help" ]; then
+  printf "https://help.envs.net/\n"
+  exit 0
+fi
+
 if [ "$3" = "gopher" ]; then
   printf "try port 70 :)\n\n"
   printf "gopher://envs.net\n"
+  exit 0
+fi
+
+if [ "$3" = "gemini" ]; then
+  printf "try port 1195 :)\n\n"
+  printf "gemini://envs.net\n"
   exit 0
 fi
 
