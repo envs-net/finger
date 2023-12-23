@@ -32,6 +32,11 @@ elif [ "$3" = "gopher" ]; then
   printf "gopher://envs.net\n"
 
 
+elif [ "$3" = "gemini" ]; then
+  printf "try port 1965 :)\n\n"
+  printf "gemini://envs.net\n"
+
+
 else
   user_folder="/home/${3}"
   #/usr/bin/finger -m "$3"
@@ -72,7 +77,7 @@ else
 
   # pgpkey
   if [ -f "${user_folder}/.pgpkey" ]; then
-    printf "pgpkey:\\n"
+    printf "\npgpkey:\\n"
     sed 's/^/  /' "${user_folder}/.pgpkey"
   fi
 
