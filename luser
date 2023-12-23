@@ -68,6 +68,12 @@ else
     printf "Online.\n"
   fi
 
+  # pgpkey
+  printf "pgpkey:\\n"
+  if [ -f "${user_folder}/.pgpkey" ]; then
+    sed 's/^/  /' "${user_folder}/.pgpkey"
+  fi
+
 fi
 
 exit 0
