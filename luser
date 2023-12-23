@@ -66,6 +66,8 @@ else
   # Online status
   if finger "$3" | grep -q 'On since'; then
     printf "Online.\n"
+  else
+    printf "Offline\n"
   fi
 
   # pgpkey
