@@ -37,22 +37,22 @@ else
   #/usr/bin/finger -m "$3"
 
   # Plan
-  printf "Plan:\\n"
   if [ -f "${user_folder}/.plan" ]; then
+    printf "Plan:\\n"
     sed 's/^/  /' "${user_folder}/.plan"
   else
     printf "No Plan.\n"
   fi
 
   # Pronouns
-  printf "Pronouns:\\n"
   if [ -f "${user_folder}/.pronouns" ]; then
+    printf "Pronouns:\\n"
     sed 's/^/  /' "${user_folder}/.pronouns"
   fi
 
   # Projects
-  printf "Projects:\\n"
   if [ -f "${user_folder}/.project" ]; then
+    printf "Projects:\\n"
     sed 's/^/  /' "${user_folder}/.project"
   fi
 
@@ -69,8 +69,8 @@ else
   fi
 
   # pgpkey
-  printf "pgpkey:\\n"
   if [ -f "${user_folder}/.pgpkey" ]; then
+    printf "pgpkey:\\n"
     sed 's/^/  /' "${user_folder}/.pgpkey"
   fi
 
