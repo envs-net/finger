@@ -16,7 +16,7 @@ if [ "$3" = "time" ]; then
 fi
 
 if [ "$3" = "envs" ]; then
-  printf "envs 4 a live\n"
+  printf "envs 4 a life\n"
   exit 0
 fi
 
@@ -26,7 +26,7 @@ if [ "$3" = "tilde" ]; then
 fi
 
 if [ "$3" = "linux" ]; then
-  printf "linux 4 a live <3\n"
+  printf "linux 4 a life <3\n"
   exit 0
 fi
 
