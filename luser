@@ -69,7 +69,7 @@ else
   fi
 
   # Online status
-  if finger "$3" | grep -q 'On since'; then
+  if who | awk '{print $1}' | grep -qx "$3"; then
     printf "Online.\n"
   else
     printf "Offline\n"
