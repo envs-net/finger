@@ -24,4 +24,4 @@ else
   printf "\n\nhello %s@%s\n" "$1" "$2"
 fi
 
-printf "users currently logged in are:\n\n%s\n" "$(who -uw | sort -u -k 1,1)"
+printf "users currently logged in are:\n\n%s\n" "$(who | awk '{print $1}' | sort -u | paste -sd ' ' -)"

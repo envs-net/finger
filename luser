@@ -64,7 +64,7 @@ else
   # Timezone
   if [ -f "${user_folder}/.tz" ]; then
     printf "Timezone: "
-    cat "${user_folder}/.tz"
+    sed 's/^/  /' "${user_folder}/.tz"
     printf "\n"
   fi
 
